@@ -1,0 +1,133 @@
+###################################################
+#    Կոդը աշխատում ա կոֆեինով ու Աստծո կամքով     #
+#    Միացնելուց առաջ աղոթեք որ միանա, միանալուց   # 
+#    հետո էլի աղոթեք, որ ոչ մի բան չտրաքի         #
+###################################################
+
+
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+#:import FitImage kivymd.utils.fitimage.FitImage
+#:include example.kv
+
+
+
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: "data/logo/kivy-icon-256.png"
+
+    MDLabel:
+        text: "KivyMD library"
+        font_style: "Button"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    Button:
+        text: "kivydevelopment@gmail.com"
+        font_style: "Caption"
+        size_hint_y: None
+        height: self.texture_size[1]
+        on_press: app.inurl_get(self)
+
+
+
+    ScrollView:
+
+        DrawerList:
+            ItemDrawer:
+                icon: "account-multiple"
+                text: "About us"
+                Button:
+                    size_hint: self.parent.size_hint
+                    opacity: 0
+                    on_release: pass
+
+
+
+
+Screen:
+
+    MDNavigationLayout:
+
+        ScreenManager:
+
+
+            Screen:
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Navigation Drawer"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+
+                    
+                    MDTabs:
+                        
+
+                        id: tabs
+
+
+
+
+
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                id: content_drawer
+
+
+
+
+<Tab>
+    Template:
+
+
+                        
+
+
+
+
+
+############################################################################
+#  Մինչև ստեղ եղածը ԵՐԵՎԻ աշխատում ա, դալշե Աստված գիտի, ես գնում եմ քնեմ  #
+############################################################################
+
+            
+
+            
+                
+
+
+
+
+
+
+    

@@ -1,0 +1,50 @@
+<Template>
+	ScreenManager:
+
+	    id: manager
+
+	    Screen:
+
+	    	name: 'tab_main'
+
+
+	        ScrollView:
+
+
+	            do_scroll_x: False
+	            do_scroll_y: True
+
+	            GridLayout:
+
+	                size_hint_y: None
+	                height: self.minimum_height
+	                cols: 1
+	                id: images
+
+
+                    Image:
+	                    size_hint_y: None
+	                    height: 400
+	                    source: 'giphy.gif'
+	                    padding: '0dp'
+	                
+	                Button:
+	                    size_hint_x: 1
+	                    size_hint_y: None
+	                    height: 100
+	                    on_release: root.ids.manager.current = 'second'
+
+
+
+
+
+
+
+	                
+	    Screen:
+
+	        name: 'second'
+
+	        Button:
+	            text: 'click'
+	            on_release: root.ids.manager.current = 'tab_main'
