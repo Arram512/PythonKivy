@@ -1,0 +1,40 @@
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    Button:
+        size_hint: None, None
+        size: 100, 100
+        on_press: app.root.ids.manager.current= 'second'
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: 'avatar.png'
+
+    GridLayout:
+
+        cols: 1
+
+        MDLabel:
+            text: "KivyMD library"
+            font_style: "Button"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDLabel:
+            text: "kivydevelopment@gmail.com"
+            font_style: "Caption"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        
+
+  
