@@ -1,10 +1,10 @@
 import os
+import sqlite3
 
-
-def get_introductions():
+def get_introductions(item):
     lessons_a = {}
     path = os.path.dirname(os.path.abspath(__file__))
-    dir = "\\Images\\Intro\\"
+    dir = f"\\Images\\{item}\\"
     gifs = os.listdir(path + dir)
     for i in range(len(gifs)):
         gif = gifs[i].split('.')[0]
@@ -12,4 +12,15 @@ def get_introductions():
 
     return lessons_a
 
-#print(get_lessons())
+# def get_description(item):
+# 	pass
+
+def query():
+    db = sqlite3.connect('app.db')
+    cursor = db.cursor()
+
+    query = ""
+
+    cursor.execute(query)
+    db.commit()
+

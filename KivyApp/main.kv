@@ -72,7 +72,16 @@
 	cols:1
 
 	Button:
+		size_hint_y: .2
+		text: 'Go back'
+		on_release: app.results_back_button(self)
+
+	MDLabel:
+
 		text: root.answers
+		font_size: '200sp'
+		halign: 'center'
+		
 
 
 
@@ -91,23 +100,28 @@
 		id: options_layout
 		cols: 2
 		size_hint_y: .3
+		background_disabled_normal: ''
 
 		Button: 
+			id: button_1
 			text: root.options[0]
-			on_release: app.check_answer(self, root.true_answer)
+			on_release: app.check_answer(self, root.true_answer, root)
 
 		Button: 
+			id: button_2
 			text: root.options[1]
-			on_release: app.check_answer(self, root.true_answer)
+			on_release: app.check_answer(self, root.true_answer, root)
 
 
 		Button: 
+			id: button_3
 			text: root.options[2]
-			on_release: app.check_answer(self, root.true_answer)
+			on_release: app.check_answer(self, root.true_answer, root)
 
 		Button: 
+			id: button_4
 			text: root.options[3]
-			on_release: app.check_answer(self, root.true_answer)
+			on_release: app.check_answer(self, root.true_answer, root)
 
 	Button:
 		text: 'Next'
@@ -211,6 +225,14 @@
 				name: 'settings_item'
 				id: settings_bottom_navigation_item
 				text: 'Settings'
+
+				MDRectangleFlatIconButton:
+    				icon: "theme-light-dark"
+    				text: "Change theme"
+					pos_hint:{"top":1}
+					size_hint_x: 1
+					size_hint_y: .1
+					on_release: app.change_theme(self)
 				
 				
 
